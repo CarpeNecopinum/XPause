@@ -14,7 +14,6 @@ TARGET_LINK_LIBRARIES("xintercept" ${LIBRARIES})
 
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin/")
 set(LIBRARIES ${LIBRARIES} "-ldl -lX11")
-ADD_DEFINITIONS("-std=c++0x")
 add_executable("xpause" "XPause.c" "common.h")
 TARGET_LINK_LIBRARIES("xpause" ${LIBRARIES})
 

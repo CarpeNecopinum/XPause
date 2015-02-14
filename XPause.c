@@ -18,7 +18,7 @@ Window findVictim(unsigned int* button)
     Window root = RootWindow (display, XDefaultScreen(display));
     Cursor cursor = XCreateFontCursor (display, XC_bogosity);
 
-
+    XSync(display, 1);
     if (XGrabPointer(display, root, False, ButtonPressMask, GrabModeSync, GrabModeAsync, None, cursor, CurrentTime) != GrabSuccess)
     {
         fprintf(stderr, "Cursor-grabbing failed!\n");
@@ -60,8 +60,14 @@ void sendSignal(Window victim, int signal)
 
 char* g_ProgName;
 
-int main()
+int main(int argc, char** argv)
 {
+    int i;
+    for (i = 1; i < argc; i++)
+    {
+        if (strcmp(argv[i], "--sleep") == 0) usleep(250000); // 1/4 seconds
+    }
+
     unsigned int button;
     Window xid = findVictim(&button);
 

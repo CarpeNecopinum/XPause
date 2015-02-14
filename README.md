@@ -12,3 +12,4 @@ To use XPause, the client you want to control has to be started with LD_PRELOAD 
 
 When you start XPause, clicking a window with the right mouse button will _pause_ the process, clicking it with the left mouse button will _unpause_ it again.
 
+XPause may fail to grab the Cursor (when starting it with i3, for example) if that happens, try "$ xpause --sleep" as a workaround.
