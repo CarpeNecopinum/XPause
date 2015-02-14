@@ -53,6 +53,7 @@ Window XCreateWindow(
     return result;
 }
 
+/*
 int XDestroyWindow(Display *display, Window window)
 {
     XDestroyWindowFunction hostage = dlsym(RTLD_NEXT, "XDestroyWindow");
@@ -65,3 +66,4 @@ int XDestroyWindow(Display *display, Window window)
 
     return hostage(display, window);
 }
+*/

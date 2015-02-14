@@ -17,3 +17,9 @@ set(LIBRARIES ${LIBRARIES} "-ldl -lX11")
 ADD_DEFINITIONS("-std=c++0x")
 add_executable("xpause" "XPause.c" "common.h")
 TARGET_LINK_LIBRARIES("xpause" ${LIBRARIES})
+
+
+install(TARGETS xpause xintercept
+        RUNTIME DESTINATION /usr/local/bin/
+        LIBRARY DESTINATION /usr/local/lib/
+       )
