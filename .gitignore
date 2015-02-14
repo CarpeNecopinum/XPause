@@ -27,3 +27,11 @@
 *.i*86
 *.x86_64
 *.hex
+bin/*
+
+# CMake stuff
+CMakeCache.txt
+CMakeFiles/*
+CMakeLists.txt.user
+Makefile
+cmake_install.cmake
